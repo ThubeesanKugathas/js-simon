@@ -19,6 +19,10 @@ while (randomList.length < 5) {
 }
 console.log(randomList);
 
+// modale per mostrare per i primi secondi i numeri del gioco
+const modalHtml = document.querySelector('.ms_modal-number');
+modalHtml.innerHTML = randomList;
+
 // lista numeri corretti + counter dei numeri corretti inseriti
 let correctList = [];
 let correct = 0;
@@ -43,3 +47,8 @@ setTimeout (function() {
     console.log(correct, correctList);
 }, 3000)
 
+// setTimeout per la modale da far sparire 
+// (leggermente prima così che il prompt non possa interrompere l'effetto)
+setTimeout (function() {
+    modalHtml.classList.add('d-none');
+}, 2999)
