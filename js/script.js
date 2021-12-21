@@ -6,7 +6,9 @@ function randomNumber(min, max) {
     return result;
 }
 
-// funzione per generare 5 numeri randomici non ripetuti
+// ----------------------------------------------------------------------------------------------
+
+// generator di 5 numeri randomici non ripetuti
 let randomList = [];
     
 while (randomList.length < 5) {
@@ -17,25 +19,27 @@ while (randomList.length < 5) {
 }
 console.log(randomList);
 
-let giusti = [];
+// lista numeri corretti + counter dei numeri corretti inseriti
+let correctList = [];
 let correct = 0;
 
+// setTimeout dedicato ai prompt
 setTimeout (function() {
     
-    let risposte = [];
-    while (risposte.length < 5) {
+    // array per definire il numero di prompt da mandare
+    let answers = [];
+    while (answers.length < 5) {
         let writtenNum = parseInt(prompt('Inserisci i 5 numeri che hai visto:'));
+
         console.log(writtenNum);
-        
-        risposte.push(writtenNum);
+        answers.push(writtenNum);
+
+        // condition per i numeri inseriti correttamente
         if (randomList.includes(writtenNum)) {
-            giusti.push(writtenNum);
+            correctList.push(writtenNum);
             correct++;
         }
     }
-    console.log(correct, giusti);
-
-    
+    console.log(correct, correctList);
 }, 3000)
 
-// verificare se i 5 numeri inseriti coincidono ai 5 numeri randomici
