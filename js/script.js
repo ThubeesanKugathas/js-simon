@@ -42,6 +42,7 @@ setTimeout (function() {
         }
     }
     alert(`Risposte corrette date: ${correct}, le Risposte che hai dato: ${correctList}`);
+    location.reload();
 }, 30000)
 
 // setTimeout per la modale da far sparire 
