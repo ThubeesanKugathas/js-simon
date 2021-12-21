@@ -29,12 +29,17 @@ while (randomList.length < 5) {
 }
 console.log(randomList);
 
+
 setTimeout (function() {
-    const scritto = [];
-    for (let i = 0; i < 5; i++) {
-        const writtenNum = parseInt(prompt('inserisci i 5 numeri che hai visto:'));
-        scritto.push(writtenNum);
+    
+    let risposte = [];
+    while (risposte.length < 5) {
+        let writtenNum = parseInt(prompt('Inserisci i 5 numeri che hai visto:'));
         console.log(writtenNum);
+        
+        risposte.push(writtenNum);
     }
-    console.log(scritto);
+    console.log(risposte);
 }, 3000)
+
+// verificare se i 5 numeri inseriti coincidono ai 5 numeri randomici
