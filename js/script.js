@@ -12,7 +12,7 @@ function randomNumber(min, max) {
 let randomList = [];
     
 while (randomList.length < 5) {
-    let number = randomNumber(1, 100);
+    let number = randomNumber(1, 1000);
     if (!randomList.includes(number)) {
         randomList.push(number);
     }
@@ -39,16 +39,16 @@ setTimeout (function() {
         answers.push(writtenNum);
 
         // condition per i numeri inseriti correttamente
-        if (randomList.includes(writtenNum)) {
+        if (randomList.includes(writtenNum) && !correctList.includes(writtenNum)) {
             correctList.push(writtenNum);
             correct++;
         }
     }
-    console.log(correct, correctList);
-}, 3000)
+    alert(`Risposte corrette date: ${correct}, le Risposte che hai dato: ${correctList}`);
+}, 30000)
 
 // setTimeout per la modale da far sparire 
 // (leggermente prima così che il prompt non possa interrompere l'effetto)
 setTimeout (function() {
     modalHtml.classList.add('d-none');
-}, 2999)
+}, 29500)
