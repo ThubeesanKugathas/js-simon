@@ -17,7 +17,6 @@ while (randomList.length < 5) {
         randomList.push(number);
     }
 }
-console.log(randomList);
 
 // modale per mostrare per i primi secondi i numeri del gioco
 const modalHtml = document.querySelector('.ms_modal-number');
@@ -29,16 +28,14 @@ let correct = 0;
 
 // setTimeout dedicato ai prompt
 setTimeout (function() {
-    
     // array per definire il numero di prompt da mandare
     let answers = [];
     while (answers.length < 5) {
         let writtenNum = parseInt(prompt('Inserisci i 5 numeri che hai visto:'));
 
-        console.log(writtenNum);
         answers.push(writtenNum);
 
-        // condition per i numeri inseriti correttamente
+        // condition per i numeri inseriti correttamente + controllo se i numeri non siano stati ripetuti
         if (randomList.includes(writtenNum) && !correctList.includes(writtenNum)) {
             correctList.push(writtenNum);
             correct++;
